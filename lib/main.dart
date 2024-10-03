@@ -148,9 +148,16 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            Container(
+              
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: const Color.fromARGB(255, 209, 209, 209),
+              ),
+              child: Text(
               expression,
               style: Theme.of(context).textTheme.headlineMedium,
+              ),
             ),
             Text(
               output
