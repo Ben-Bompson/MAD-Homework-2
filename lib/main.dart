@@ -60,6 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String output = '';
   String operator = '';
   bool operatorPresent = false;
+  bool operandPresent = false;
 
   void updateExpression(String c) {
     setState(() {
@@ -106,6 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
       expression = '';
       operator = '';
       operatorPresent = false;
+      operandPresent = false;
     });
   }
 
@@ -157,20 +159,29 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: () {updateExpression('1');}, 
+                  onPressed: () {
+                    updateExpression('1');
+                    operandPresent = true;
+                  }, 
                   child: const Text('1'),
                 ),
                 ElevatedButton(
-                  onPressed: () {updateExpression('2');}, 
+                  onPressed: () {
+                    updateExpression('2');
+                    operandPresent = true;
+                  }, 
                   child: const Text('2'),
                 ),
                 ElevatedButton(
-                  onPressed: () {updateExpression('3');}, 
+                  onPressed: () {
+                    updateExpression('3');
+                    operandPresent = true;
+                  }, 
                   child: const Text('3'),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    if (!operatorPresent){
+                    if (!operatorPresent && operandPresent){
                       updateExpression('+');
                       operatorPresent = true;
                       operator = '+';
@@ -184,20 +195,29 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: () {updateExpression('4');}, 
+                  onPressed: () {
+                    updateExpression('4');
+                    operandPresent = true;
+                  }, 
                   child: const Text('4'),
                 ),
                 ElevatedButton(
-                  onPressed: () {updateExpression('5');}, 
+                  onPressed: () {
+                    updateExpression('5');
+                    operandPresent = true;
+                  }, 
                   child: const Text('5'),
                 ),
                 ElevatedButton(
-                  onPressed: () {updateExpression('6');}, 
+                  onPressed: () {
+                    updateExpression('6');
+                    operandPresent = true;
+                  }, 
                   child: const Text('6'),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    if (!operatorPresent){
+                    if (!operatorPresent && operandPresent){
                       updateExpression('-');
                       operatorPresent = true;
                       operator = '-';
@@ -211,20 +231,29 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: () {updateExpression('7');}, 
+                  onPressed: () {
+                    updateExpression('7');
+                    operandPresent = true;
+                  }, 
                   child: const Text('7'),
                 ),
                 ElevatedButton(
-                  onPressed: () {updateExpression('8');}, 
+                  onPressed: () {
+                    updateExpression('8');
+                    operandPresent = true;
+                  }, 
                   child: const Text('8'),
                 ),
                 ElevatedButton(
-                  onPressed: () {updateExpression('9');}, 
+                  onPressed: () {
+                    updateExpression('9');
+                    operandPresent = true;
+                  }, 
                   child: const Text('9'),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    if (!operatorPresent){
+                    if (!operatorPresent && operandPresent){
                       updateExpression('*');
                       operatorPresent = true;
                       operator = '*';
@@ -253,7 +282,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    if (!operatorPresent){
+                    if (!operatorPresent && operandPresent){
                       updateExpression('/');
                       operatorPresent = true;
                       operator = '/';
